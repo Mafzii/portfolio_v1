@@ -2,12 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
+:root {
   --text: #00120B;
   --background: #ffffff;
   --primary: #29524A;
   --secondary: #425054;
   --accent: #D0F4EA;
-} */
+}
 
+.bg-gradient {
+  background-image: linear-gradient(var(--primary), var(--primary));
+  border-radius: 50%;
+  animation: circle_animation 5s linear infinite;
+}
 
+@keyframes circle_animation{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}

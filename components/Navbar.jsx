@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Navbar () {
 	return (
 		<section>
-      <div className="flex">
+      <div className="flex justify-between">
         <div className="w-fit">
           <h1 className="text-4xl font-bold tracking-wide">
             <a href="/">
@@ -22,13 +22,18 @@ export default function Navbar () {
             {/* add socials icons here rather than info */}
           </div>
         </div>
-        <div className="ps-16">
-          <Image
-          className="rounded-full"
-            src="/image/_profile.jpeg"
-            width={200}
-            height={200}
-          />
+        <div className=" w-52 h-52">
+          <div className="relative">
+            <div className="absolute w-full h-full rounded full z-0 bg-gradient"></div>
+            <div className="flex justify-center relative z-10">
+              <Image
+              className="rounded-full pointer-events-none"
+                src="/image/_profile.jpeg"
+                width={200}
+                height={200}
+              />
+            </div>
+          </div>
         </div>
       </div>
 		</section>

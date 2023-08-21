@@ -4,9 +4,9 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body className="flex justify-center pt-16 text-text">
-        <Main />
-        <NextScript />
+      <body className="max-w-2xl pt-16 text-text bg-background mx-auto">
+          <Main />
+          <NextScript />
       </body>
     </Html>
   )
