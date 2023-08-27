@@ -13,7 +13,7 @@ export default function Navbar () {
             </a>
           </h1>
           <h2 className="text-black text-2xl">
-            Software Engineer at Techlogix
+            Software Engineer
           </h2>
           <div className="py-2">
             <p><a className="hover:text-black">/about</a></p>

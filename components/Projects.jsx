@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Projects () {
     return (
-        <section className="">
+        <section className="my-4">
             <h1 className="text-black text-3xl tracking-tight">projects...</h1>
             <div>
                 {/* create a way to display projects in a list view */}

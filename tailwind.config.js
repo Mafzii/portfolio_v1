@@ -20,7 +20,7 @@ module.exports = {
         'background-dark': '#D0D2D0',
         'primary':'#29524A',
         'secondary':'#425054',
-        'accent':'#D0F4EA'
+        'accent': '#32E7C3' // light: '#D0F4EA'
       },
     },
   },
