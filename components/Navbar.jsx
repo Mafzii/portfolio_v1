@@ -1,5 +1,4 @@
 import React from "react";
-import style from '../styles/style.module.css'
 import Image from "next/image";
 
 export default function Navbar () {
