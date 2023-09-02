@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 
-export default function Navbar () {
-	return (
-		<section>
+export default function Navbar() {
+  return (
+    <section>
       <div className="flex justify-between">
         <div className="w-fit">
           <h1 className="text-4xl font-bold tracking-wide">
@@ -26,7 +26,8 @@ export default function Navbar () {
             <div className="absolute w-full h-full rounded full z-0 bg-gradient"></div>
             <div className="flex justify-center relative z-10">
               <Image
-              className="rounded-full pointer-events-none"
+                alt="profile picture"
+                className="rounded-full pointer-events-none"
                 src="/image/_profile.jpeg"
                 width={200}
                 height={200}
@@ -35,6 +36,6 @@ export default function Navbar () {
           </div>
         </div>
       </div>
-		</section>
-	)	
+    </section>
+  )
 }

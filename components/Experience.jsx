@@ -2,7 +2,6 @@ import React from "react";
 
 const _experience = [
     {
-        id: 1,
         place: "TECHLOGIX",
         title: "Software Engineer",
         date: "Jun 2023 - Present",
@@ -10,7 +9,6 @@ const _experience = [
         tech: ["java", "javascript", "knockout.js", "oracle", "cordova", "git", "jira", "obdx"],
     },
     {
-        id: 2,
         place: "HASHMOVE",
         title: "Front-end Developer",
         date: "Jun 2023 - Jul 2023",
@@ -18,7 +16,6 @@ const _experience = [
         tech: ["angular", "typescript", "html", "css", "figma"],
     },
     {
-        id: 3,
         place: "MICROSOFT",
         title: "Technical Intern",
         date: "Jun 2018",
@@ -32,9 +29,9 @@ export default function Experience() {
             <h1 className="text-black text-3xl tracking-tight">experience...</h1>
             <div className="my-4">
                 {
-                    _experience.map((info) => {
+                    _experience.map((info, index) => {
                         return (
-                            <div key={info["id"]} className="mb-4">
+                            <div key={'experience-'+index} className="mb-4">
                                 <div className="grid grid-cols-6 gap-0">
                                     <div className="col-span-2">
                                         <h3 className="text-text font-bold">{info["place"]}</h3>
@@ -48,9 +45,9 @@ export default function Experience() {
                                         <div className="flex flex-wrap mt-2">
                                             {
                                                 info["tech"] ? (
-                                                    info["tech"].map((chip) => {
+                                                    info["tech"].map((chip,index) => {
                                                         return (
-                                                            <div key={info["id"]} className="mt-1 me-1 rounded-lg bg-transparent py-1 px-3 border-2 border-solid border-background-dark">
+                                                            <div key={'chip-'+index} className="mt-1 me-1 rounded-lg bg-transparent py-1 px-3 border-2 border-solid border-background-dark">
                                                                 <p className="text-text text-xs font-light">{chip}</p>
                                                             </div>
                                                         )
