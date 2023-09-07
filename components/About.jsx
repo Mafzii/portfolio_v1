@@ -1,8 +1,8 @@
-import React from "react";
+import { React } from "react";
 
-export default function About () {
+const About = () => {
     return (
-        <section className="my-4">
+        <section id="about" className="my-4">
             <h1 className="text-black text-3xl tracking-tight">about...</h1>
             <div className="grid grid-cols-6">
                 <p className="bg-primary text-background drop-shadow-lg rounded-lg p-4 col-span-6 my-4">
@@ -13,4 +13,6 @@ export default function About () {
             </div>
         </section>
     )
-}
+};
+
+export default About;

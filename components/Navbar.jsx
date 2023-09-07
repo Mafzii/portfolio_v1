@@ -1,41 +1,92 @@
-import React from "react";
+import { React, useRef } from "react";
 import Image from "next/image";
+import { motion, useInView, AnimatePresence } from "framer-motion";
+import { SocialIcon } from 'react-social-icons/component'
+import 'react-social-icons/github'
+import 'react-social-icons/linkedin'
+import 'react-social-icons/twitter'
+import 'react-social-icons/instagram'
 
-export default function Navbar() {
-  return (
-    <section>
-      <div className="flex justify-between">
-        <div className="w-fit">
-          <h1 className="text-4xl font-bold tracking-wide">
-            <a href="/">
-              mustafa afzal
-            </a>
-          </h1>
-          <h2 className="text-black text-2xl">
-            Software Engineer
-          </h2>
-          <div className="py-2">
-            <p><a className="hover:text-black">/about</a></p>
-            <p><a className="hover:text-black">/experience</a></p>
-            <p><a className="hover:text-black">/projects</a></p>
-            {/* add socials icons here rather than info */}
-          </div>
-        </div>
-        <div className=" w-52 h-52">
-          <div className="relative">
-            <div className="absolute w-full h-full rounded full z-0 bg-gradient"></div>
-            <div className="flex justify-center relative z-10">
-              <Image
-                alt="profile picture"
-                className="rounded-full pointer-events-none"
-                src="/image/_profile.jpeg"
-                width={200}
-                height={200}
-              />
+const Navbar = () => {
+    const ref = useRef(null);
+    const navSwitch = useInView(ref);
+    const scrollTo = function (target) {
+        const element = document.getElementById(target);
+        element?.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+    }
+    return (
+        <section>
+            <div className="flex justify-between">
+                <div className="w-fit">
+                    <h1 className="text-4xl font-bold tracking-wide">
+                        <a href="/">
+                            mustafa afzal
+                        </a>
+                    </h1>
+                    <h2 className="text-black text-2xl">
+                        Software Engineer
+                    </h2>
+                    <div className="py-2">
+                        <SocialIcon className="me-3" url="https://github.com/Mafzii" bgColor={"#29524A"}  style={{ height:'2rem', width:'2rem' }} />
+                        <SocialIcon className="me-3" url="https://instagram.com/mustafa_afzal/" bgColor={"#29524A"}  style={{ height:'2rem', width:'2rem' }} />
+                        <SocialIcon className="me-3" url="https://linkedin.com/in/mustafa-afzal" bgColor={"#29524A"}  style={{ height:'2rem', width:'2rem' }} />
+                        {/* add socials icons here rather than info */}
+                    </div>
+                </div>
+                <div className=" w-52 h-52">
+                    <div className="relative">
+                        <div className="absolute w-full h-full rounded full z-0 bg-gradient"></div>
+                        <div className="flex justify-center relative z-10">
+                            <Image
+                                ref={ref}
+                                alt="profile picture"
+                                className="rounded-full pointer-events-none"
+                                src="/image/_profile.jpeg"
+                                width={200}
+                                height={200}
+                            />
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
+            <AnimatePresence>
+                {!navSwitch && (
+                    <motion.div
+                        initial={{ y: -100 }}
+                        animate={{ y: 0 }}
+                        exit={{ y: -100 }}
+                        transition={{ duration: 0.5 }}
+                        className="z-50 fixed top-0 left-0 w-full h-12 bg-background-dark">
+                        <div className="flex justify-between max-w-2xl mx-auto">
+                            <div className="flex justify-between w-fit">
+                                <p className="m-2">
+                                    mustafa afzal
+                                </p>
+
+                            </div>
+                            <div className="flex justify-between w-fit">
+                                <p className="m-2 hover:text-black cursor-pointer">
+                                    <a onClick={() => scrollTo('about')}>
+                                        /about
+                                    </a>
+                                </p>
+                                <p className="m-2 hover:text-black cursor-pointer">
+                                    <a onClick={() => scrollTo('experience')}>
+                                        /experience
+                                    </a>
+                                </p>
+                                <p className="m-2 hover:text-black cursor-pointer">
+                                    <a onClick={() => scrollTo('projects')}>
+                                        /projects
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </section>
+    )
+};
+
+export default Navbar;

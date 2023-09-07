@@ -25,13 +25,13 @@ const _experience = [
 
 export default function Experience() {
     return (
-        <section className="my-4">
+        <section id="experience" className="my-4">
             <h1 className="text-black text-3xl tracking-tight">experience...</h1>
             <div className="my-4">
                 {
                     _experience.map((info, index) => {
                         return (
-                            <div key={'experience-'+index} className="mb-4">
+                            <div key={'experience-' + index} className="mb-4">
                                 <div className="grid grid-cols-6 gap-0">
                                     <div className="col-span-2">
                                         <h3 className="text-text font-bold">{info["place"]}</h3>
@@ -45,9 +45,9 @@ export default function Experience() {
                                         <div className="flex flex-wrap mt-2">
                                             {
                                                 info["tech"] ? (
-                                                    info["tech"].map((chip,index) => {
+                                                    info["tech"].map((chip, index) => {
                                                         return (
-                                                            <div key={'chip-'+index} className="mt-1 me-1 rounded-lg bg-transparent py-1 px-3 border-2 border-solid border-background-dark">
+                                                            <div key={'chip-' + index} className="mt-1 me-1 rounded-lg bg-transparent py-1 px-3 border-2 border-solid border-background-dark">
                                                                 <p className="text-text text-xs font-light">{chip}</p>
                                                             </div>
                                                         )

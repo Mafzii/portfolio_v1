@@ -39,3 +39,12 @@
     transform: rotate(360deg);
   }
 }
+
+.my-social-icon .social-svg {
+  color: #29524A;
+}
+
+.my-social-icon .social-svg:hover {
+  color: #29524A;
+  background: white;
+}
