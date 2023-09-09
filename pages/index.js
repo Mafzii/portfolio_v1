@@ -33,7 +33,7 @@ export default function Home() {
           sizes="16x16"
           href="/image/favicon-16x16.png"
         />
-        {/* <link rel="manifest" href="/image/site.webmanifest" /> */}
+        <link rel="manifest" href="/image/site.webmanifest" />
       </Head>
       <Scrollbar />
       <Navbar />

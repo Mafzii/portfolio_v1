@@ -5,7 +5,7 @@ const _experience = [
         place: "TECHLOGIX",
         title: "Software Engineer",
         date: "Jun 2023 - Present",
-        info: "Working with a leading bank in Pakistan to create a digital banking platform. Building using Oracle's OBDX system. Full Stack development using Java and JS.",
+        info: "Working with a leading bank in Pakistan to create a digital banking platform using Oracle's OBDX system. Full Stack development using Java and JS.",
         tech: ["java", "javascript", "knockout.js", "oracle", "cordova", "git", "jira", "obdx"],
     },
     {

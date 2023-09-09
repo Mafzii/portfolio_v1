@@ -16,6 +16,7 @@ const Navbar = () => {
     }
     return (
         <section>
+            <div ref={ref} className="p-8"></div>
             <div className="flex justify-between">
                 <div className="w-fit">
                     <h1 className="text-4xl font-bold tracking-wide">
@@ -27,9 +28,9 @@ const Navbar = () => {
                         Software Engineer
                     </h2>
                     <div className="py-2">
-                        <SocialIcon className="me-3" url="https://github.com/Mafzii" bgColor={"#29524A"}  style={{ height:'2rem', width:'2rem' }} />
-                        <SocialIcon className="me-3" url="https://instagram.com/mustafa_afzal/" bgColor={"#29524A"}  style={{ height:'2rem', width:'2rem' }} />
-                        <SocialIcon className="me-3" url="https://linkedin.com/in/mustafa-afzal" bgColor={"#29524A"}  style={{ height:'2rem', width:'2rem' }} />
+                        <SocialIcon className="me-3" url="https://github.com/Mafzii" bgColor={"#29524A"} style={{ height: '2rem', width: '2rem' }} />
+                        <SocialIcon className="me-3" url="https://instagram.com/mustafa_afzal/" bgColor={"#29524A"} style={{ height: '2rem', width: '2rem' }} />
+                        <SocialIcon className="me-3" url="https://linkedin.com/in/mustafa-afzal" bgColor={"#29524A"} style={{ height: '2rem', width: '2rem' }} />
                         {/* add socials icons here rather than info */}
                     </div>
                 </div>
@@ -38,7 +39,6 @@ const Navbar = () => {
                         <div className="absolute w-full h-full rounded full z-0 bg-gradient"></div>
                         <div className="flex justify-center relative z-10">
                             <Image
-                                ref={ref}
                                 alt="profile picture"
                                 className="rounded-full pointer-events-none"
                                 src="/image/_profile.jpeg"
@@ -56,13 +56,16 @@ const Navbar = () => {
                         animate={{ y: 0 }}
                         exit={{ y: -100 }}
                         transition={{ duration: 0.5 }}
-                        className="z-50 fixed top-0 left-0 w-full h-12 bg-background-dark">
+                        className="z-50 fixed top-0 left-0 w-full h-12 bg-background-dark rounded-b-lg shadow-lg pt-1">
                         <div className="flex justify-between max-w-2xl mx-auto">
-                            <div className="flex justify-between w-fit">
-                                <p className="m-2">
-                                    mustafa afzal
-                                </p>
-
+                            <div className="flex my-auto w-fit">
+                                <Image
+                                    alt="personal logo"
+                                    className="rounded-full pointer-events-none"
+                                    src="/image/favicon-32x32.png"
+                                    width={32}
+                                    height={32}
+                                />
                             </div>
                             <div className="flex justify-between w-fit">
                                 <p className="m-2 hover:text-black cursor-pointer">
