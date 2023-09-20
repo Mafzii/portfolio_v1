@@ -28,11 +28,21 @@ const Navbar = () => {
                         Software Engineer
                     </h2>
                     <div className="py-2">
-                        <SocialIcon className="me-3" url="https://github.com/Mafzii" bgColor={"#29524A"} style={{ height: '2rem', width: '2rem' }} />
-                        <SocialIcon className="me-3" url="https://instagram.com/mustafa_afzal/" bgColor={"#29524A"} style={{ height: '2rem', width: '2rem' }} />
-                        <SocialIcon className="me-3" url="https://linkedin.com/in/mustafa-afzal" bgColor={"#29524A"} style={{ height: '2rem', width: '2rem' }} />
-                        {/* add socials icons here rather than info */}
+                        <SocialIcon className="me-3" url="https://github.com/Mafzii" bgColor={"#29524A"} style={{ height: '2rem', width: '2rem' }} target="_blank"/>
+                        <SocialIcon className="me-3" url="https://instagram.com/mustafa_afzal/" bgColor={"#29524A"} style={{ height: '2rem', width: '2rem' }} target="_blank"/>
+                        <SocialIcon className="me-3" url="https://linkedin.com/in/mustafa-afzal" bgColor={"#29524A"} style={{ height: '2rem', width: '2rem' }} target="_blank"/>
                     </div>
+                    <a download href="MustafaAfzal_CV.pdf" className="bg-primary w-fit my-1 py-1 px-3 rounded-full text-white flex">
+                        <span>resume</span>
+                        <div className="m-auto ms-2">
+                            <Image
+                                    alt="download resume"
+                                    src="/download.jpg"
+                                    width={14}
+                                    height={14}
+                                />
+                        </div>
+                    </a>
                 </div>
                 <div className=" w-52 h-52">
                     <div className="relative">
