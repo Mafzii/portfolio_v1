@@ -33,3 +33,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+node-v18.12.1-linux-x64.tar.xz
+
+node-v18.12.1-linux-x64/bin/corepack
+
+node-v18.12.1-linux-x64/bin/node
+
+node-v18.12.1-linux-x64/bin/npm
