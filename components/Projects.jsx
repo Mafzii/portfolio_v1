@@ -26,18 +26,17 @@ export default function Projects() {
     <section id="projects" className="my-4 drop-shadow-lg">
       <h1 className="text-black text-3xl tracking-tight">projects...</h1>
       <div className="my-4 grid grid-flow-row grid-cols-2 gap-2">
-        <motion.div
-          layoutId="project1_out"
+        <div
           onClick={() => setProject1(!project1)}
-          className="bg-background-dark rounded-lg hover:drop-shadow-[0_10px_5px_rgba(0,0,0,0.25)] w-full h-[16rem] origin-bottom bottom-0"
-          initial={{ scaleY: 0 }}
-          animate={{ scaleY: 1 }}
-          exit={{ scaleY: 0 }}
+          className="bg-background-dark rounded-lg h-[16rem] drop-shadow-[0_10px_5px_rgba(0,0,0,0.25)]"
         >
           {!project1 && (
-            <motion.div className="bg-background-dark rounded-lg">
+            <div
+              className="bg-primary rounded-lg text-white px-3 py-1 bottom-0 absolute w-full"
+              layoutId="project1_out"
+            >
               {_projects[0].name}
-            </motion.div>
+            </div>
           )}
           <AnimatePresence>
             {project1 && (
@@ -45,7 +44,7 @@ export default function Projects() {
                 key={"modal_project1"}
                 layoutId={"project1_in"}
                 onClick={() => setProject1(!project1)}
-                className="w-full h-full bg-primary rounded-lg text-white origin-bottom bottom-0"
+                className="w-full h-full bg-primary rounded-lg text-white origin-bottom"
                 initial={{ scaleY: 0 }}
                 animate={{ scaleY: 1 }}
                 exit={{ scaleY: 0 }}
@@ -54,7 +53,7 @@ export default function Projects() {
               </motion.div>
             )}
           </AnimatePresence>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
