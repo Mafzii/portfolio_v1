@@ -1,9 +1,10 @@
 import { React, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const _projects = [
   {
-    name: "PLAY ON",
+    name: "Flow Fields",
   },
   {
     name: "HITCHERR",
@@ -30,15 +31,24 @@ export default function Projects() {
           onClick={() => setProject1(!project1)}
           className="bg-background-dark rounded-lg h-[16rem] drop-shadow-[0_10px_5px_rgba(0,0,0,0.25)]"
         >
-          {!project1 && (
-            <div
-              className="bg-primary rounded-lg text-white px-3 py-1 bottom-0 absolute w-full"
-              layoutId="project1_out"
-            >
-              {_projects[0].name}
-            </div>
-          )}
-          <AnimatePresence>
+          <AnimatePresence mode="wait">
+            {!project1 && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                layoutId="project1_out"
+              >
+                <Image
+                  alt="profile picture"
+                  className="absolute rounded-lg"
+                  src="/image/_profile.jpeg"
+                  width={200}
+                  height={200}
+                />
+                <div className="bg-primary rounded-lg text-white px-3 py-1 bottom-0 absolute w-full">{_projects[0].name}</div>
+              </motion.div>
+            )}
             {project1 && (
               <motion.div
                 key={"modal_project1"}
