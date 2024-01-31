@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const _projects = [
   {
-    name: "Flow Fields",
+    name: "flow fields",
   },
   {
     name: "HITCHERR",
@@ -42,9 +42,9 @@ export default function Projects() {
                 <Image
                   alt="profile picture"
                   className="absolute rounded-lg"
-                  src="/image/_profile.jpeg"
-                  width={200}
-                  height={200}
+                  src="/image/giphy.gif"
+                  class="rounded-lg w-full h-full"
+                  layout="fill"
                 />
                 <div className="bg-primary rounded-lg text-white px-3 py-1 bottom-0 absolute w-full">{_projects[0].name}</div>
               </motion.div>
