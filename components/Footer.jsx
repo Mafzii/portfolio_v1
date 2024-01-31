@@ -1,10 +1,5 @@
-import React from 'react';
+import React from "react";
 
 export default function Footer() {
-    return (
-       <section className="h-[8rem]">
-            
-       </section>
-    )
+  return <div className="h-[8rem] bg-background"></div>;
 }
-
