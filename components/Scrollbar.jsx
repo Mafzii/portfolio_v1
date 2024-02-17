@@ -11,7 +11,7 @@ export default function Scrollbar() {
   return (
     <motion.div
       style={{ scaleY }}
-      className="fixed bottom-0 right-0 w-2 h-screen bg-primary z-50 origin-bottom-right"
+      className="fixed bottom-0 right-0 w-2 h-[100vh] bg-primary z-50 origin-bottom-right"
     ></motion.div>
   );
 }
