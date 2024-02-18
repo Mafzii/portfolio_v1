@@ -1,4 +1,4 @@
-import { React, useRef } from "react";
+import { React, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { SocialIcon } from "react-social-icons/component";
@@ -10,6 +10,7 @@ import "react-social-icons/instagram";
 const Navbar = () => {
   const ref = useRef(null);
   const navSwitch = useInView(ref);
+  const [showContactForm, setShowContactForm] = useState(false);
   const scrollTo = function (target) {
     const element = document.getElementById(target);
     element?.scrollIntoView({
@@ -91,15 +92,6 @@ const Navbar = () => {
             className="z-50 fixed top-0 left-0 w-full h-12 bg-background-dark rounded-b-lg shadow-lg pt-1"
           >
             <div className="flex justify-between max-w-2xl mx-auto">
-              <div className="flex my-auto w-fit">
-                <Image
-                  alt="personal logo"
-                  className="rounded-full pointer-events-none"
-                  src="/image/favicon-32x32.png"
-                  width={32}
-                  height={32}
-                />
-              </div>
               <div className="flex justify-between w-fit">
                 <p className="m-2 hover:text-black cursor-pointer">
                   <a onClick={() => scrollTo("about")}>/about</a>
@@ -109,6 +101,11 @@ const Navbar = () => {
                 </p>
                 <p className="m-2 hover:text-black cursor-pointer">
                   <a onClick={() => scrollTo("projects")}>/projects</a>
+                </p>
+              </div>
+              <div className="flex p-1 bg-secondary rounded-md my-auto w-fit">
+                <p className="px-2 text-white cursor-pointer">
+                  <a onClick={() => setShowContactForm(true)}>contact me</a>
                 </p>
               </div>
             </div>

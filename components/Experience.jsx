@@ -10,8 +10,8 @@ const _experience = [
       "java",
       "javascript",
       "knockout.js",
-      "oracle",
-      "cordova",
+      "oracleDB",
+      "jenkins",
       "git",
       "jira",
       "obdx",
@@ -19,9 +19,9 @@ const _experience = [
   },
   {
     place: "HASHMOVE",
-    title: "Front-end Developer",
+    title: "Frontend Development Intern",
     date: "Jun 2023 - Jul 2023",
-    info: "Learnt how to build responsive and scalable web applications. Worked on building a notifications center with lazy loading to reduce volume of data fetched. Designed a component for warehouse and train activity.",
+    info: "Learnt how to build responsive and scalable web applications. Implemented a notifications center with lazy loading and pagination with Angular. Designed components for warehouse and train activity in Figma.",
     tech: ["angular", "typescript", "html", "css", "figma"],
   },
   {
