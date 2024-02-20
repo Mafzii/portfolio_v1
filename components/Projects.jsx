@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 const _projects = [
   {
@@ -18,14 +18,18 @@ export default function Projects() {
       <h1 className="text-black text-3xl tracking-tight">projects...</h1>
       <div className="my-4">
         {_projects.map((info, index) => (
-          <div className="my-6 grid grid-flow-row grid-cols-2 gap-x-6 gap-y-2">
-            <div className="w-full bg-background-dark rounded-md p-4 drop-shadow-lg">
+          <div
+            key={"project-" + index}
+            className="my-6 grid grid-flow-row grid-cols-2 gap-x-6 gap-y-2"
+          >
+            <div className=" relative w-full bg-background-dark rounded-md p-4 drop-shadow-lg">
               <Image
+                priority // possibly remove if causing performance issues
                 src={info.image}
                 alt="Gif of the project"
-                format="gif"
                 layout="fill"
                 objectFit="cover"
+                format="gif"
                 className="rounded-md p-4"
               />
             </div>
