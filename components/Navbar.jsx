@@ -89,7 +89,7 @@ const Navbar = () => {
             animate={{ y: 0 }}
             exit={{ y: -100 }}
             transition={{ duration: 0.5 }}
-            className="z-50 fixed top-0 left-0 w-full h-12 bg-background-dark rounded-b-lg shadow-lg pt-1"
+            className="z-10 fixed top-0 left-0 w-full h-12 bg-background-dark rounded-b-lg shadow-lg pt-1"
           >
             <div className="flex justify-between max-w-2xl mx-auto">
               <div className="flex justify-between w-fit">
@@ -109,6 +109,82 @@ const Navbar = () => {
                 </p>
               </div>
             </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {showContactForm && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="fixed top-0 left-0 w-full h-full bg-gray-500 bg-opacity-50 z-10 flex items-center justify-center"
+            onClick={(e) => {
+              if (e.target !== e.currentTarget) return;
+              setShowContactForm(false);
+            }}
+          >
+            <motion.div
+              className="bg-background rounded-md w-96 m-auto p-8 z-50"
+              initial={{ y: 100 }}
+              animate={{ y: 0 }}
+              exit={{ y: 100 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div>
+                <h1 className="text-3xl font-bold mb-1">Contact Me</h1>
+                <p className="text-secondary mb-4">
+                  I'm always open to new opportunities and collaborations. Feel
+                  free to reach out to me.
+                </p>
+              </div>
+              <form>
+                <div className="flex flex-col">
+                  <label htmlFor="name">
+                    Name <span className="text-secondary">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    className="rounded-md p-2 mb-2"
+                    required
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label htmlFor="email">
+                    Email <span className="text-secondary">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    className="rounded-md p-2 mb-2"
+                    required
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label htmlFor="message">
+                    Message <span className="text-secondary">*</span>
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    className="rounded-md p-2 min-h-[3rem] max-h-32"
+                    required
+                  />
+                </div>
+                <div className="flex justify-end">
+                  <button
+                    type="submit"
+                    className="bg-primary text-white rounded-md p-2 mt-4"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
