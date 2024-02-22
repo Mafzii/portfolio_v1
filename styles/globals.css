@@ -6,24 +6,35 @@
   @variants responsive {
     /* Hide scrollbar for Chrome, Safari and Opera */
     .no-scrollbar::-webkit-scrollbar {
-        display: none;
+      display: none;
     }
 
     /* Hide scrollbar for IE, Edge and Firefox */
     .no-scrollbar {
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
     }
   }
 }
 
 :root {
-  --text: #00120B;
+  --text: #00120b;
   --background: #ffffff;
-  --primary: #29524A;
+  --primary: #29524a;
   --secondary: #425054;
-  --accent: #D0F4EA;
+  --accent: #d0f4ea;
 }
+
+/* html,
+body {
+  background: #130f40;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+} */
 
 ::selection {
   background-color: var(--accent);
@@ -36,20 +47,20 @@
   animation: circle_animation 5s linear infinite;
 }
 
-@keyframes circle_animation{
-  0%{
+@keyframes circle_animation {
+  0% {
     transform: rotate(0deg);
   }
-  100%{
+  100% {
     transform: rotate(360deg);
   }
 }
 
 .my-social-icon .social-svg {
-  color: #29524A;
+  color: #29524a;
 }
 
 .my-social-icon .social-svg:hover {
-  color: #29524A;
+  color: #29524a;
   background: white;
 }

@@ -22,50 +22,52 @@ const Navbar = () => {
   return (
     <section>
       <div ref={ref} className="p-8"></div>
-      <div className="flex justify-between">
+      <div className="flex flex-wrap-reverse justify-center md:justify-between">
         <div className="w-fit">
-          <h1 className="text-4xl font-bold tracking-wide">
+          <h1 className="text-4xl font-bold tracking-wide mt-3 md:mt-0">
             <a href="/">mustafa afzal</a>
           </h1>
-          <h2 className="text-black text-2xl">Software Engineer</h2>
-          <div className="py-2">
-            <SocialIcon
-              className="me-3"
-              url="https://github.com/Mafzii"
-              bgColor={"#29524A"}
-              style={{ height: "2rem", width: "2rem" }}
-              target="_blank"
-            />
-            <SocialIcon
-              className="me-3"
-              url="https://instagram.com/mustafa_afzal/"
-              bgColor={"#29524A"}
-              style={{ height: "2rem", width: "2rem" }}
-              target="_blank"
-            />
-            <SocialIcon
-              className="me-3"
-              url="https://linkedin.com/in/mustafa-afzal"
-              bgColor={"#29524A"}
-              style={{ height: "2rem", width: "2rem" }}
-              target="_blank"
-            />
-          </div>
-          <a
-            download
-            href="MustafaAfzal_CV.pdf"
-            className="bg-primary w-fit my-1 py-1 px-3 rounded-full text-white flex"
-          >
-            <span>resume</span>
-            <div className="m-auto ms-2">
-              <Image
-                alt="download resume"
-                src="/download.jpg"
-                width={14}
-                height={14}
+          <h2 className="text-black text-2xl text-center md:text-left mb-3 md:mb-0">Software Engineer</h2>
+          <div className="flex md:block">
+            <div className="py-2">
+              <SocialIcon
+                className="me-3"
+                url="https://github.com/Mafzii"
+                bgColor={"#29524A"}
+                style={{ height: "2rem", width: "2rem" }}
+                target="_blank"
+              />
+              <SocialIcon
+                className="me-3"
+                url="https://instagram.com/mustafa_afzal/"
+                bgColor={"#29524A"}
+                style={{ height: "2rem", width: "2rem" }}
+                target="_blank"
+              />
+              <SocialIcon
+                className="me-3"
+                url="https://linkedin.com/in/mustafa-afzal"
+                bgColor={"#29524A"}
+                style={{ height: "2rem", width: "2rem" }}
+                target="_blank"
               />
             </div>
-          </a>
+            <a
+              download
+              href="MustafaAfzal_CV.pdf"
+              className="bg-primary w-fit my-1 py-2 md:py-1 px-3 rounded-full text-white flex"
+            >
+              <span>resume</span>
+              <div className="m-auto ms-2">
+                <Image
+                  alt="download resume"
+                  src="/download.jpg"
+                  width={14}
+                  height={14}
+                />
+              </div>
+            </a>
+          </div>
         </div>
         <div className=" w-52 h-52">
           <div className="relative">
@@ -85,9 +87,9 @@ const Navbar = () => {
       <AnimatePresence>
         {!navSwitch && (
           <motion.div
-            initial={{ y: -100 }}
+            initial={{ y: -50 }}
             animate={{ y: 0 }}
-            exit={{ y: -100 }}
+            exit={{ y: -50 }}
             transition={{ duration: 0.5 }}
             className="z-10 fixed top-0 left-0 w-full h-12 bg-background-dark rounded-b-lg shadow-lg pt-1"
           >

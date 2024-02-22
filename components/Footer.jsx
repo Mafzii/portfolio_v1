@@ -6,10 +6,10 @@ export default function Footer() {
     <section id="footer">
       <div className="mt-4 h-12">
         <div className="flex items-center justify-end h-full">
-          <p className="text-primary">© 2024 v1.0</p>
+          <p className="text-primary me-2">© 2024 v1.0</p>
           <Image
             alt="personal logo"
-            className="rounded-full pointer-events-none ps-2"
+            className="rounded-full pointer-events-none"
             src="/image/favicon-32x32.png"
             width={32}
             height={32}
