@@ -105,7 +105,7 @@ const Navbar = () => {
                   <a onClick={() => scrollTo("projects")}>/projects</a>
                 </p>
               </div>
-              <div className="flex p-1 bg-secondary rounded-md my-auto w-fit">
+              <div className="flex p-1 bg-secondary rounded-md my-auto w-fit me-2 md:me-0">
                 <p className="px-2 text-white cursor-pointer">
                   <a onClick={() => setShowContactForm(true)}>contact me</a>
                 </p>

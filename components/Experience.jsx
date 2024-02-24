@@ -40,15 +40,17 @@ export default function Experience() {
         {_experience.map((info, index) => {
           return (
             <div key={"experience-" + index} className="mb-4">
-              <div className="grid grid-cols-6 gap-0">
-                <div className="col-span-2">
-                  <h3 className="text-text font-bold">{info["place"]}</h3>
-                  <p className="text-secondary text-lg">{info["title"]}</p>
+              <div className="grid grid-cols-6 gap-0 mb-5">
+                <div className="col-span-6 md:col-span-2 flex justify-between items-end md:block mb-1">
+                  <div>
+                    <h3 className="text-text font-bold">{info["place"]}</h3>
+                    <p className="text-secondary text-sm md:text-lg">{info["title"]}</p>
+                  </div>
                   <p className="text-secondary font-light text-sm tracking-tight">
                     {info["date"]}
                   </p>
                 </div>
-                <div className="col-span-4">
+                <div className="col-span-6 md:col-span-4">
                   <div className="bg-background-dark rounded-md p-4 drop-shadow-lg">
                     <p className="text-secondary tracking-tight font-sm">
                       {info["info"]}

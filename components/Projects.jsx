@@ -20,19 +20,18 @@ export default function Projects() {
         {_projects.map((info, index) => (
           <div
             key={"project-" + index}
-            className="my-6 grid grid-flow-row grid-cols-2 gap-x-6 gap-y-2"
+            className="my-6 md:grid grid-flow-row grid-cols-2 gap-x-6 gap-y-2"
           >
-            <div className=" relative w-full bg-background-dark rounded-md p-4 drop-shadow-lg">
               <Image
                 priority // possibly remove if causing performance issues
                 src={info.image}
                 alt="Gif of the project"
-                layout="fill"
+                width="0"
+                height="0"
+                className="col-span-2 md:col-span-1 w-full h-52 md:h-auto rounded-md p-4"
                 objectFit="cover"
                 format="gif"
-                className="rounded-md p-4"
               />
-            </div>
             <div className="grid grid-flow-row grid-rows-2">
               <div className="flex items-end">
                 <h1 className="font-light tracking-tight text-3xl">
