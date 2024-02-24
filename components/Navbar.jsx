@@ -8,6 +8,9 @@ import "react-social-icons/twitter";
 import "react-social-icons/instagram";
 
 const Navbar = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const ref = useRef(null);
   const navSwitch = useInView(ref);
   const [showContactForm, setShowContactForm] = useState(false);
@@ -152,6 +155,8 @@ const Navbar = () => {
                     name="name"
                     className="rounded-md p-2 mb-2"
                     required
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                   />
                 </div>
                 <div className="flex flex-col">
