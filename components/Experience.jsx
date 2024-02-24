@@ -7,14 +7,14 @@ const _experience = [
     date: "Jun 2023 - Present",
     info: "Working with a leading bank in Pakistan to create a digital banking platform using Oracle's OBDX system. Full Stack development using Java and JS.",
     tech: [
-      "java",
-      "javascript",
+      "Java",
+      "JavaScript",
       "knockout.js",
-      "oracleDB",
-      "jenkins",
-      "git",
-      "jira",
-      "obdx",
+      "OracleDB",
+      "Jenkins",
+      "Git",
+      "Jira",
+      "OBDX",
     ],
   },
   {
@@ -22,7 +22,7 @@ const _experience = [
     title: "Frontend Development Intern",
     date: "Jun 2023 - Jul 2023",
     info: "Learnt how to build responsive and scalable web applications. Implemented a notifications center with lazy loading and pagination with Angular. Designed components for warehouse and train activity in Figma.",
-    tech: ["angular", "typescript", "html", "css", "figma"],
+    tech: ["Angular", "Typescript", "HTML", "CSS", "Figma"],
   },
   {
     place: "MICROSOFT",
@@ -40,7 +40,7 @@ export default function Experience() {
         {_experience.map((info, index) => {
           return (
             <div key={"experience-" + index} className="mb-4">
-              <div className="grid grid-cols-6 gap-0 mb-5">
+              <div className="grid grid-cols-6 gap-0 mb-8 md:mb-5">
                 <div className="col-span-6 md:col-span-2 flex justify-between items-end md:block mb-1">
                   <div>
                     <h3 className="text-text font-bold">{info["place"]}</h3>

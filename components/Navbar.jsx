@@ -1,5 +1,5 @@
 import { React, useRef, useState } from "react";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { SocialIcon } from "react-social-icons/component";
 import "react-social-icons/github";

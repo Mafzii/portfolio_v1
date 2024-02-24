@@ -1,14 +1,15 @@
 import { React, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/legacy/image";
+import Image from "next/image";
+import flowFieldGif from "../public/image/flow-fields.gif";
 
 const _projects = [
   {
     name: "flow system",
-    image: "/image/flow-fields.gif",
+    image: flowFieldGif,
     description:
-      "Creative coding project stemming from an interest in creating a randomized particle system",
-    tech: ["HTML5", "CSS3", "JavaScript"],
+      "Particle system following 2D Perlin noise vectors with control variables to create custom flow fields",
+    tech: ["HTML", "CSS", "JavaScript"],
   },
 ];
 
@@ -18,32 +19,30 @@ export default function Projects() {
       <h1 className="text-black text-3xl tracking-tight">projects...</h1>
       <div className="my-4">
         {_projects.map((info, index) => (
-          <div
-            key={"project-" + index}
-            className="my-6 md:grid grid-flow-row grid-cols-2 gap-x-6 gap-y-2"
-          >
-              <Image
-                priority // possibly remove if causing performance issues
-                src={info.image}
-                alt="Gif of the project"
-                width="0"
-                height="0"
-                className="col-span-2 md:col-span-1 w-full h-52 md:h-auto rounded-md p-4"
-                objectFit="cover"
-                format="gif"
-              />
-            <div className="grid grid-flow-row grid-rows-2">
-              <div className="flex items-end">
-                <h1 className="font-light tracking-tight text-3xl">
-                  {info.name}
-                </h1>
+          <div key={"project-" + index} className="my-6 flex flex-col">
+            <div className="flex flex-wrap md:flex-nowrap gap-0 md:gap-4">
+              <div className="relative h-52 md:h-auto basis-full md:basis-3/5 flex-grow-0 bg-background-dark rounded-t-md md:rounded-md">
+                <Image
+                  fill
+                  src={info.image}
+                  alt="Gif of the project"
+                  className="w-full rounded-md p-4 object-cover"
+                  format="gif"
+                />
               </div>
-              <div className="bg-primary text-background rounded-md p-4 drop-shadow-lg">
-                {info.description}
+              <div className="basis-full md:basis-2/5 flex-grow-0 flex flex-col-reverse md:flex-col">
+                <div className="flex items-end mt-1 md:mt-16">
+                  <h1 className="tracking-tight text-2xl md:text-3xl">
+                    {info.name}
+                  </h1>
+                </div>
+                <div className="bg-primary text-background rounded-b-md md:rounded-md p-4 drop-shadow-lg">
+                  {info.description}
+                </div>
               </div>
             </div>
-            <div className="col-span-2">
-              <div className="flex flex-wrap">
+            <div className="w-full">
+              <div className="flex flex-wrap md:mt-2">
                 {info["tech"]
                   ? info["tech"].map((chip, index) => {
                       return (
