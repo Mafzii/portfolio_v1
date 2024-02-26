@@ -21,6 +21,13 @@ export default function Projects() {
         {_projects.map((info, index) => (
           <div key={"project-" + index} className="my-6 flex flex-col">
             <div className="flex flex-wrap md:flex-nowrap gap-0 md:gap-4">
+            <div className="md:hidden basis-full md:basis-2/5 flex-grow-0 flex flex-col-reverse md:flex-col">
+                <div className="flex items-end mt-1 md:mt-16">
+                  <h1 className="tracking-tight text-2xl md:text-3xl">
+                    {info.name}
+                  </h1>
+                </div>
+              </div>
               <div className="relative h-52 md:h-auto basis-full md:basis-3/5 flex-grow-0 bg-background-dark rounded-t-md md:rounded-md">
                 <Image
                   fill
@@ -32,7 +39,7 @@ export default function Projects() {
               </div>
               <div className="basis-full md:basis-2/5 flex-grow-0 flex flex-col-reverse md:flex-col">
                 <div className="flex items-end mt-1 md:mt-16">
-                  <h1 className="tracking-tight text-2xl md:text-3xl">
+                  <h1 className="hidden md:block tracking-tight text-2xl md:text-3xl">
                     {info.name}
                   </h1>
                 </div>

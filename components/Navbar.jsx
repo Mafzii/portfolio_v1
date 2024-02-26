@@ -8,12 +8,19 @@ import "react-social-icons/twitter";
 import "react-social-icons/instagram";
 
 const Navbar = () => {
+  // form state
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  const [showContactForm, setShowContactForm] = useState(false);
+
+  // scroll to functionality
   const ref = useRef(null);
   const navSwitch = useInView(ref);
-  const [showContactForm, setShowContactForm] = useState(false);
+
   const scrollTo = function (target) {
     const element = document.getElementById(target);
     element?.scrollIntoView({
@@ -22,6 +29,28 @@ const Navbar = () => {
       inline: "nearest",
     });
   };
+
+  const handleContactFormSubmit = (e) => {
+    e.preventDefault();
+    const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    if (!name || !email || !message) {
+      setError("All fields are required!");
+      setSuccess("");
+      return;
+    } else if (!regex.test(email)) {
+      setError("Is that a valid email?");
+      setSuccess("");
+      return;
+    } else if (message.length < 10) {
+      setError("Message must be longer!!!");
+      setSuccess("");
+      return;
+    }
+    setSuccess("Thank you for reaching out to me!\tI will get back to you soon.");
+    setError("");
+    console.log(name, email, message);
+  };
+
   return (
     <section>
       <div ref={ref} className="p-8"></div>
@@ -30,7 +59,9 @@ const Navbar = () => {
           <h1 className="text-4xl font-bold tracking-wide mt-3 md:mt-0">
             <a href="/">mustafa afzal</a>
           </h1>
-          <h2 className="text-black text-2xl text-center md:text-left mb-3 md:mb-0">Software Engineer</h2>
+          <h2 className="text-black text-2xl text-center md:text-left mb-3 md:mb-0">
+            Software Engineer
+          </h2>
           <div className="flex md:block">
             <div className="py-2">
               <SocialIcon
@@ -140,14 +171,23 @@ const Navbar = () => {
               <div>
                 <h1 className="text-3xl font-bold mb-1">Contact Me</h1>
                 <p className="text-secondary mb-4">
-                  I'm always open to new opportunities and collaborations. Feel
-                  free to reach out to me.
+                  I'm always open to new opportunities and collaborations.
                 </p>
               </div>
-              <form>
+              <form noValidate onSubmit={handleContactFormSubmit}>
+                {error && (
+                  <div className="text-center bg-red-100 text-red-500 p-2 rounded-md mb-2">
+                    {error}
+                  </div>
+                )}
+                {success && (
+                  <div className="text-center bg-green-100 text-green-500 p-2 rounded-md mb-2">
+                    {success}
+                  </div>
+                )}
                 <div className="flex flex-col">
                   <label htmlFor="name">
-                    Name <span className="text-secondary">*</span>
+                    Name <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
@@ -161,7 +201,7 @@ const Navbar = () => {
                 </div>
                 <div className="flex flex-col">
                   <label htmlFor="email">
-                    Email <span className="text-secondary">*</span>
+                    Email <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="email"
@@ -169,17 +209,21 @@ const Navbar = () => {
                     name="email"
                     className="rounded-md p-2 mb-2"
                     required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className="flex flex-col">
                   <label htmlFor="message">
-                    Message <span className="text-secondary">*</span>
+                    Message <span className="text-red-500">*</span>
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     className="rounded-md p-2 min-h-[3rem] max-h-32"
                     required
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
                   />
                 </div>
                 <div className="flex justify-end">
