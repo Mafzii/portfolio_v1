@@ -12,6 +12,9 @@ const Navbar = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  // form validation
+  const [honeyPot, setHoneyPot] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
@@ -32,6 +35,9 @@ const Navbar = () => {
 
   const handleContactFormSubmit = (e) => {
     e.preventDefault();
+    if (honeyPot) {
+      return;
+    }
     const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     if (!name || !email || !message) {
       setError("All fields are required!");
@@ -48,7 +54,6 @@ const Navbar = () => {
     }
     setSuccess("Thank you for reaching out to me!\tI will get back to you soon.");
     setError("");
-    console.log(name, email, message);
   };
 
   return (
@@ -159,6 +164,8 @@ const Navbar = () => {
             onClick={(e) => {
               if (e.target !== e.currentTarget) return;
               setShowContactForm(false);
+              setSuccess("");
+              setError("");
             }}
           >
             <motion.div
@@ -224,6 +231,16 @@ const Navbar = () => {
                     required
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
+                  />
+                </div>
+                <div className="hidden">
+                  <label htmlFor="honeyPot">
+                    If you are a human, leave this field empty
+                  </label>
+                  <input
+                    type="text"
+                    value={honeyPot}
+                    onChange={(e) => setHoneyPot(e.target.value)}
                   />
                 </div>
                 <div className="flex justify-end">
