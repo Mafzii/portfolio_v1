@@ -6,19 +6,20 @@ import "react-social-icons/github";
 import "react-social-icons/linkedin";
 import "react-social-icons/twitter";
 import "react-social-icons/instagram";
+import { sendContactForm } from "@/lib/api";
 
 const Navbar = () => {
+  const [loading, setLoading] = useState(false);
   // form state
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [showContactForm, setShowContactForm] = useState(false);
 
   // form validation
   const [honeyPot, setHoneyPot] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
-
-  const [showContactForm, setShowContactForm] = useState(false);
 
   // scroll to functionality
   const ref = useRef(null);
@@ -33,27 +34,41 @@ const Navbar = () => {
     });
   };
 
-  const handleContactFormSubmit = (e) => {
+  const handleContactFormSubmit = async (e) => {
     e.preventDefault();
     if (honeyPot) {
       return;
     }
     const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
     if (!name || !email || !message) {
       setError("All fields are required!");
-      setSuccess("");
       return;
     } else if (!regex.test(email)) {
       setError("Is that a valid email?");
-      setSuccess("");
       return;
     } else if (message.length < 10) {
       setError("Message must be longer!!!");
-      setSuccess("");
       return;
     }
-    setSuccess("Thank you for reaching out to me!\tI will get back to you soon.");
     setError("");
+
+    setLoading(true);
+    const sendingStatus = await sendContactForm({ name, email, message });
+    setLoading(false);
+
+    console.log(sendingStatus);
+
+    if (sendingStatus.error) {
+      setError("Something went wrong! Please try again later.");
+      return;
+    }
+    if (sendingStatus.success) {
+      setSuccess(
+        "Thank you for reaching out to me!\tI will get back to you soon."
+      );
+      document.getElementById("submit").disabled = true;
+    }
   };
 
   return (
@@ -164,7 +179,6 @@ const Navbar = () => {
             onClick={(e) => {
               if (e.target !== e.currentTarget) return;
               setShowContactForm(false);
-              setSuccess("");
               setError("");
             }}
           >
@@ -244,12 +258,25 @@ const Navbar = () => {
                   />
                 </div>
                 <div className="flex justify-end">
-                  <button
-                    type="submit"
-                    className="bg-primary text-white rounded-md p-2 mt-4"
-                  >
-                    Submit
-                  </button>
+                  {loading ? (
+                    <button
+                      disabled
+                      id="loading"
+                      className="bg-primary text-white rounded-md px-6 mt-4 flex justify-between items-center h-10 w-20"
+                    >
+                      <div className="h-2 w-2 bg-background rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+                      <div className="h-2 w-2 bg-background rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+                      <div className="h-2 w-2 bg-background rounded-full animate-bounce"></div>
+                    </button>
+                  ) : (
+                    <button
+                      id="submit"
+                      type="submit"
+                      className="bg-primary text-white rounded-md p-2 mt-4 h-10 w-20"
+                    >
+                      Submit
+                    </button>
+                  )}
                 </div>
               </form>
             </motion.div>
