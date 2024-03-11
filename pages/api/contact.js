@@ -1,16 +1,24 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import { Resend } from "resend";
+import EmailTemplate from "../../components/EmailTemplate";
 
-export default function handler(req, res) {
-  console.log(req.body);
-  console.log(res.status);
+const resend = new Resend(process.env.RESEND_API);
 
-  setTimeout(() => {
-    return res.status(200).json({ name: 'John Doe' })
-  }, 5000);
-  // res.status(200).json({ name: 'John Doe' })
-
-  // create an email functionality here using gmail api
-  // https://developers.google.com/gmail/api/quickstart/nodejs
-  // https://developers.google.com/gmail/api/guides/sending
+export default async function handler(req, res) {
+  try {
+    if (req.method === "POST") {
+      const { name, email, message } = req.body;
   
+      const resendStatus = await resend.emails.send({
+        from: "portfolio@resend.dev",
+        to: [process.env.EMAIL_TO],
+        subject: `Portfolio: New message from ${name}`,
+        react: EmailTemplate({ name, email, message }),
+      });
+      return res.status(200).json({ message: "Message sent" });
+    }
+  } catch (e) {
+    console.error(e.message);
+    return res.status(400).json({ message: "Bad Request" });
+  }
+
 }

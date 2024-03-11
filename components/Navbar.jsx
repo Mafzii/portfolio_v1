@@ -54,20 +54,17 @@ const Navbar = () => {
     setError("");
 
     setLoading(true);
-    const sendingStatus = await sendContactForm({ name, email, message });
+    const response = await sendContactForm({ name, email, message });
     setLoading(false);
 
-    console.log(sendingStatus);
-
-    if (sendingStatus.error) {
-      setError("Something went wrong! Please try again later.");
+    if (response.message == "Bad Request") {
+      setError("Something went wrong!");
       return;
     }
-    if (sendingStatus.success) {
+    if (response.message === "Message sent") {
       setSuccess(
-        "Thank you for reaching out to me!\tI will get back to you soon."
+        "Thank you for reaching out!"
       );
-      document.getElementById("submit").disabled = true;
     }
   };
 
@@ -262,7 +259,7 @@ const Navbar = () => {
                     <button
                       disabled
                       id="loading"
-                      className="bg-primary text-white rounded-md px-6 mt-4 flex justify-between items-center h-10 w-20"
+                      className="bg-primary text-white rounded-md px-6 mt-4 flex justify-between items-center h-10 w-20 pt-1"
                     >
                       <div className="h-2 w-2 bg-background rounded-full animate-bounce [animation-delay:-0.3s]"></div>
                       <div className="h-2 w-2 bg-background rounded-full animate-bounce [animation-delay:-0.15s]"></div>
