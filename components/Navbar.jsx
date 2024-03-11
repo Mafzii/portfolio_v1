@@ -36,6 +36,8 @@ const Navbar = () => {
 
   const handleContactFormSubmit = async (e) => {
     e.preventDefault();
+    setError("");
+    setSuccess("");
     if (honeyPot) {
       return;
     }
@@ -51,7 +53,6 @@ const Navbar = () => {
       setError("Message must be longer!!!");
       return;
     }
-    setError("");
 
     setLoading(true);
     const response = await sendContactForm({ name, email, message });
