@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import smallIcon from "../public/image/favicon-32x32.png";
 
 export default function Footer() {
   return (
@@ -10,7 +11,7 @@ export default function Footer() {
           <Image
             alt="personal logo"
             className="rounded-full pointer-events-none"
-            src="/image/favicon-32x32.png"
+            src={smallIcon}
             width={32}
             height={32}
           />

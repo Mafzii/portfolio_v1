@@ -28,7 +28,7 @@ const _experience = [
     place: "MICROSOFT",
     title: "Technical Intern",
     date: "Jun 2018",
-    info: "Compiled a report on the state of Artificial Intelligence in Pakistan by researching about local software houses and start-ups.",
+    info: "Compiled a reports on the state of Artificial Intelligence in Pakistan by researching about local software houses and start-ups.",
   },
 ];
 

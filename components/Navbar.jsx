@@ -7,6 +7,8 @@ import "react-social-icons/linkedin";
 import "react-social-icons/twitter";
 import "react-social-icons/instagram";
 import { sendContactForm } from "@/lib/api";
+import downloadIcon from "../public/download.jpg";
+import profilePic from "../public/image/_profile.jpeg";
 
 const Navbar = () => {
   const [loading, setLoading] = useState(false);
@@ -111,7 +113,7 @@ const Navbar = () => {
               <div className="m-auto ms-2">
                 <Image
                   alt="download resume"
-                  src="/download.jpg"
+                  src={downloadIcon}
                   width={14}
                   height={14}
                 />
@@ -126,7 +128,7 @@ const Navbar = () => {
               <Image
                 alt="profile picture"
                 className="rounded-full pointer-events-none"
-                src="/image/_profile.jpeg"
+                src={profilePic}
                 width={200}
                 height={200}
               />
