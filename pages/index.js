@@ -9,7 +9,9 @@ import Footer from "@/components/Footer";
 
 import React from "react";
 
-const inter = Inter({ subsets: ["latin"] });
+import appleTouchIcon from "../public/image/apple-touch-icon.png"
+import favicon32x32 from "../public/image/favicon-32x32.png"
+import favicon16x16 from "../public/image/favicon-16x16.png"
 
 export default function Home() {
   return (
@@ -19,19 +21,19 @@ export default function Home() {
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href="/image/apple-touch-icon.png"
+          href={appleTouchIcon.src}
         />
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href="/image/favicon-32x32.png"
+          href={favicon32x32.src}
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href="/image/favicon-16x16.png"
+          href={favicon16x16.src}
         />
         <link rel="manifest" href="/image/site.webmanifest" />
       </Head>
