@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "autoprefixer": "10.4.14",
-    "dotenv": "^16.4.5",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
     "framer-motion": "^10.16.1",

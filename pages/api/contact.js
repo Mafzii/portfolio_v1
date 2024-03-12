@@ -1,7 +1,7 @@
 import { Resend } from "resend";
 import EmailTemplate from "../../components/EmailTemplate";
 
-const resend = new Resend(process.env.REACT_APP_RESEND_API);
+const resend = new Resend(process.env.RESEND_API);
 
 export default async function handler(req, res) {
   try {
@@ -10,7 +10,7 @@ export default async function handler(req, res) {
   
       const resendStatus = await resend.emails.send({
         from: "portfolio@resend.dev",
-        to: [process.env.REACT_APP_EMAIL_TO],
+        to: [process.env.EMAIL_TO],
         subject: `Portfolio: New message from ${name}`,
         react: EmailTemplate({ name, email, message }),
       });
