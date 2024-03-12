@@ -63,9 +63,7 @@ const Navbar = () => {
       return;
     }
     if (response.message === "Message sent") {
-      setSuccess(
-        "Thank you for reaching out!"
-      );
+      setSuccess("Thank you for reaching out!");
     }
   };
 
@@ -75,7 +73,7 @@ const Navbar = () => {
       <div className="flex flex-wrap-reverse justify-center md:justify-between">
         <div className="w-fit">
           <h1 className="text-4xl font-bold tracking-wide mt-3 md:mt-0">
-            <a href="/">mustafa afzal</a>
+            mustafa afzal
           </h1>
           <h2 className="text-black text-2xl text-center md:text-left mb-3 md:mb-0">
             Software Engineer
@@ -91,14 +89,14 @@ const Navbar = () => {
               />
               <SocialIcon
                 className="me-3"
-                url="https://instagram.com/mustafa_afzal/"
+                url="https://linkedin.com/in/mustafa-afzal"
                 bgColor={"#29524A"}
                 style={{ height: "2rem", width: "2rem" }}
                 target="_blank"
               />
               <SocialIcon
                 className="me-3"
-                url="https://linkedin.com/in/mustafa-afzal"
+                url="https://instagram.com/mustafa_afzal/"
                 bgColor={"#29524A"}
                 style={{ height: "2rem", width: "2rem" }}
                 target="_blank"
@@ -157,7 +155,7 @@ const Navbar = () => {
                   <a onClick={() => scrollTo("projects")}>/projects</a>
                 </p>
               </div>
-              <div className="flex p-1 bg-secondary rounded-md my-auto w-fit me-2 md:me-0">
+              <div className="flex p-1 bg-secondary hover:bg-primary rounded-md my-auto w-fit me-2 md:me-0">
                 <p className="px-2 text-white cursor-pointer">
                   <a onClick={() => setShowContactForm(true)}>contact me</a>
                 </p>
@@ -194,16 +192,28 @@ const Navbar = () => {
                 </p>
               </div>
               <form noValidate onSubmit={handleContactFormSubmit}>
-                {error && (
-                  <div className="text-center bg-red-100 text-red-500 p-2 rounded-md mb-2">
-                    {error}
-                  </div>
-                )}
-                {success && (
-                  <div className="text-center bg-green-100 text-green-500 p-2 rounded-md mb-2">
-                    {success}
-                  </div>
-                )}
+                <AnimatePresence>
+                  {error && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      className="text-center bg-red-100 text-red-500 p-2 rounded-md mb-2"
+                    >
+                      {error}
+                    </motion.div>
+                  )}
+                  {success && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      className="text-center bg-green-100 text-green-500 p-2 rounded-md mb-2"
+                    >
+                      {success}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
                 <div className="flex flex-col">
                   <label htmlFor="name">
                     Name <span className="text-red-500">*</span>

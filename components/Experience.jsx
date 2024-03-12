@@ -21,14 +21,14 @@ const _experience = [
     place: "HASHMOVE",
     title: "Frontend Development Intern",
     date: "Jun 2023 - Jul 2023",
-    info: "Learnt how to build responsive and scalable web applications. Implemented a notifications center with lazy loading and pagination with Angular. Designed components for warehouse and train activity in Figma.",
+    info: "Learnt how to build responsive and scalable web applications. Implemented components with Angular and designed user flows in Figma.",
     tech: ["Angular", "Typescript", "HTML", "CSS", "Figma"],
   },
   {
     place: "MICROSOFT",
     title: "Technical Intern",
     date: "Jun 2018",
-    info: "Compiled a report on the state of Artificial Intelligence in Pakistan by researching about local software houses and start-ups. Performed a training session in the capacity of Technical Intern as per the Microsoft System.",
+    info: "Compiled a report on the state of Artificial Intelligence in Pakistan by researching about local software houses and start-ups.",
   },
 ];
 
