@@ -15,12 +15,20 @@ module.exports = {
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
-        'text':'#35605A',
-        'background':'#E6E8E6',
-        'background-dark': '#D0D2D0',
-        'primary':'#29524A',
-        'secondary':'#425054',
-        'accent': '#D7E5E1' // light: '#D0F4EA'
+        'text': '#FFFFFF',
+        'background': '#121212',
+        'background-dark': '#232323',
+        'primary': '#232323',
+        'secondary': '#444444',
+        'accent': '#ced4da',
+
+
+        // 'text':'#35605A',
+        // 'background':'#E6E8E6',
+        // 'background-dark': '#D0D2D0',
+        // 'primary':'#29524A',
+        // 'secondary':'#425054',
+        // 'accent': '#D7E5E1' // light: '#D0F4EA'
       },
     },
   },

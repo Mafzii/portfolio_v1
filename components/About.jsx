@@ -3,7 +3,7 @@ import { React } from "react";
 const About = () => {
   return (
     <section id="about" className="my-4">
-      <h1 className="text-black text-3xl tracking-tight">about...</h1>
+      <h1 className="text-text text-3xl tracking-tight">about...</h1>
       <div className="grid grid-cols-6">
         <div className="bg-primary text-background drop-shadow-lg rounded-lg p-4 col-span-6 my-4">
           <p>

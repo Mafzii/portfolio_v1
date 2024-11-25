@@ -26,7 +26,7 @@ const _projects = [
 export default function Projects() {
   return (
     <section id="projects" className="my-4">
-      <h1 className="text-black text-3xl tracking-tight">projects...</h1>
+      <h1 className="text-text text-3xl tracking-tight">projects...</h1>
       <p className="text-primary text-xs font-semibold pt-1">
         <span className="font-extrabold">NOTE:</span> These are just projects
         from 2024 onwards. Older projects can be found on my GitHub or resume.

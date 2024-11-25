@@ -35,7 +35,7 @@ const _experience = [
 export default function Experience() {
   return (
     <section id="experience" className="my-4">
-      <h1 className="text-black text-3xl tracking-tight">experience...</h1>
+      <h1 className="text-text text-3xl tracking-tight">experience...</h1>
       <div className="my-4">
         {_experience.map((info, index) => {
           return (
@@ -51,8 +51,8 @@ export default function Experience() {
                   </p>
                 </div>
                 <div className="col-span-6 md:col-span-4">
-                  <div className="bg-background-dark rounded-md p-4 drop-shadow-lg">
-                    <p className="text-secondary tracking-tight font-sm">
+                  <div className="bg-primary rounded-md p-4 drop-shadow-lg">
+                    <p className="text-background tracking-tight font-sm">
                       {info["info"]}
                     </p>
                   </div>

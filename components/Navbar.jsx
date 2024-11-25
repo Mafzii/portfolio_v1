@@ -77,7 +77,7 @@ const Navbar = () => {
           <h1 className="text-4xl font-bold tracking-wide mt-3 md:mt-0">
             mustafa afzal
           </h1>
-          <h2 className="text-black text-2xl text-center md:text-left mb-3 md:mb-0">
+          <h2 className="text-text text-2xl text-center md:text-left mb-3 md:mb-0">
             Software Engineer
           </h2>
           <div className="flex md:block">
@@ -85,26 +85,26 @@ const Navbar = () => {
               <SocialIcon
                 className="me-3"
                 url="https://github.com/Mafzii"
-                bgColor={"#29524A"}
+                bgColor={"#000000"}
                 style={{ height: "2rem", width: "2rem" }}
                 target="_blank"
               />
               <SocialIcon
                 className="me-3"
                 url="https://linkedin.com/in/mustafa-afzal"
-                bgColor={"#29524A"}
+                bgColor={"#000000"}
                 style={{ height: "2rem", width: "2rem" }}
                 target="_blank"
               />
               <SocialIcon
                 className="me-3"
                 url="https://instagram.com/mustafa_afzal/"
-                bgColor={"#29524A"}
+                bgColor={"#000814"}
                 style={{ height: "2rem", width: "2rem" }}
                 target="_blank"
               />
             </div>
-            <a
+            {/* <a
               download
               href="MustafaAfzal_CV.pdf"
               className="bg-primary w-fit my-1 py-2 md:py-1 px-3 rounded-full text-white flex"
@@ -118,7 +118,7 @@ const Navbar = () => {
                   height={14}
                 />
               </div>
-            </a>
+            </a> */}
           </div>
         </div>
         <div className=" w-52 h-52">
@@ -147,13 +147,13 @@ const Navbar = () => {
           >
             <div className="flex justify-between max-w-2xl mx-auto">
               <div className="flex justify-between w-fit">
-                <p className="m-2 hover:text-black cursor-pointer">
+                <p className="m-2 hover:text-text cursor-pointer">
                   <a onClick={() => scrollTo("about")}>/about</a>
                 </p>
-                <p className="m-2 hover:text-black cursor-pointer">
+                <p className="m-2 hover:text-text cursor-pointer">
                   <a onClick={() => scrollTo("experience")}>/experience</a>
                 </p>
-                <p className="m-2 hover:text-black cursor-pointer">
+                <p className="m-2 hover:text-text cursor-pointer">
                   <a onClick={() => scrollTo("projects")}>/projects</a>
                 </p>
               </div>
